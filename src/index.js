@@ -6,11 +6,12 @@ path: './env'})
 
 
 connectDB()
-
-
-
-
-
+.then(() => {
+app.listen(process.env.PORT || 8000, () => {console.log(`sever is runnig at port : ${process.env.PORT}`);})
+throw error})
+.catch((error) => {
+  console.error("MONGO db connection failed !!  : ", error);
+});
 
 
 
